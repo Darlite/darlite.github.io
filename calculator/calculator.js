@@ -98,6 +98,8 @@ console.log("Integer division function: ");
 console.log("intDivision(12, 4): " + intDivision(12, 4));
 console.log("intDivision(11, 6): " + intDivision(11, 6));
 console.log("intDivision(15, 0): " + intDivision(15, 0));
+console.log("intDivision(3.5, 2): " + intDivision(3.5, 2));
+console.log("intDivision(7.8, 2): " + intDivision(7.8, 2));
 console.log("intDivision({ }, 11): " + intDivision({ }, 11));
 console.log("intDivision('c', 7): " + intDivision('c', 7));
 console.log("intDivision('ofpo', 78): " + intDivision('ofpo', 78));
