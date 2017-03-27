@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML elements</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" accesskey="1">One</a>
+      <a href="#" accesskey="2">Two</a>
+      <a href="#" accesskey="3">Three</a>
+    </nav>
+    <h1>Site header</h1>
+    <p>And this is some text under the header</p>
+  </header>
+  <main>
+    <section class="photo">
+      <header>
+        <h1>This section with photos</h1>
+      </header>
+      <article>
+        <header>
+          <h1>Mystic pier</h1>
+        </header>
+        <p lang="en" contenteditable="true" spellcheck="true">The Sopot Pier (Polish: Molo w Sopocie) - the pier in the city of Sopot, built as a pleasure pier and as a mooring point for cruise boats, first opened in 1827. At 511.5m, the pier is the longest wooden pier in Europe. (You can change this article)</p>
+        <figure>
+          <img src="pier.jpg" width="304" height="228">
+          <figcaption style="font-style: italic">Pier in Sopot, Gdansk</figcaption>
+        </figure>
+        <footer draggable="true" title="This thing is draggable">
+          Published by Davydov Sergei (Draggable)
+        </footer>
+      </article>
+
+      <aside>
+        <h2>Hello</h2>
+        <p>Yes, this is a dog</p>
+      </aside>
+
+      <article>
+        <header>
+          <h1>From Chile with love</h1>
+        </header>
+        <p>Torres del Paine National Park (Spanish: Parque Nacional Torres del Paine) is a national park encompassing mountains, glaciers, lakes, and rivers in southern Chilean Patagonia. The Cordillera del Paine is the centerpiece of the park. It lies in a transition area between the Magellanic subpolar forests and the Patagonian Steppes.</p>
+        <figure>
+          <img src="chile.jpg" width="304" height="228">
+          <figcaption style="font-style: italic">Torres del Paine National Park, Chile</figcaption>
+        </figure>
+        <footer>
+          Published by Dmitriy Ilyshev
+        </footer>
+      </article>
+
+      <footer hidden>
+        This footer should be hidden
+      </footer>
+    </section>
+
+    <section class="text">
+      <header>
+        <h2>This section just with text</h2>
+      </header>
+      <article>
+        <header>
+          <h1>Pier in Sopot</h1>
+        </header>
+        <p>The first pier was built in <time datetime="1827">1827</time>, next rebuilt to the length of 150 metres, then to 315 m. It was brought to the contemporary length in 1928, along with the walking passage of the spa. The first non-wooden elements appeared after 1990, when the head was modernised using steel elements. Nowadays the pier is a <mark>grade I</mark> listed building.</p>
+      </article>
+      <article>
+        <header>
+          <h1>Torres del Paine National Park</h1>
+        </header>
+        <p>The park is one of the 11 protected areas of the Magallanes Region and Chilean Antarctica (together with four national parks, three national reserves, and three national monuments). Together, the protected forested areas comprise <mark>about 51%</mark> of the land of the region (6,728,744 hectares).</p>
+      </article>
+    </section>
+  </main>
+  <details open>
+    <summary>Copyright 2017</summary>
+    <p data-rights-type="magazine">&#169 National Geographic</p>
+    <p data-rights-type="photographer">&#169 Davydov Sergei</p>
+    <p data-rights-type="photographer">&#169 Dmitriy Ilyshev</p>
+  </details>
+</body>
+</html>
