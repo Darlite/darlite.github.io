@@ -12,9 +12,15 @@ function isArrayThree(a) {
 
 function range(a, b, c) {
   var arr = [];
-  if (b === undefined) {
-    for (var i = 0; i < a; i++) {
-      arr.push(i);
+  if (b === undefined || b === null) {
+    if (c !== undefined) {
+      for (var i = 0; i < a; i += c) {
+        arr.push(i);
+      }
+    } else {
+      for (var i = 0; i < a; i++) {
+        arr.push(i);
+      }
     }
   } else if (c === undefined) {
     for (var i = a; i < b; i++) {
@@ -32,7 +38,9 @@ function compactLoop(a) {
   var arr = [];
   if (Array.isArray(a)) {
     for (var i = 0; i < a.length; i++) {
-      arr[i] = true;
+      if (a[i]) {
+        arr.push(a[i]);
+      }
     }
     return arr;
   } else {
@@ -42,13 +50,10 @@ function compactLoop(a) {
 
 function compact(a) {
   if (Array.isArray(a)) {
-    /*
-    var arr = a.map(function(b) {
-      return true;
+    var arr = a.filter(function(el) {
+      return el ? true : false; 
     });
-    */
-    var arr = a.slice();
-    return arr.fill(true);
+    return arr;
   } else {
     console.log(a + " is not an array");
   }
@@ -68,11 +73,9 @@ function sumLoop(a) {
 
 function sum(a) {
   if (Array.isArray(a)) {
-    var sum = 0;
-    a.map(function(b) {
-      sum += b;
+    return a.reduce(function(a,b) {
+      return a + b;
     });
-    return sum;
   } else {
     console.log(a + " is not an array");
   }
@@ -81,7 +84,7 @@ function sum(a) {
 function unique(a) {
   if (Array.isArray(a)) {
     var arr = [];
-    a.map(function(el) {
+    a.forEach(function(el) {
       if (!arr.includes(el)) {
         arr.push(el);
       }
@@ -102,13 +105,12 @@ function last(a) {
 
 function excludeLast(a, b) {
   if (Array.isArray(a)) {
-    var arr = a.slice();
     if (b === undefined) {
-      arr.pop();
+      a.pop();
     } else if (typeof b == "number") {
-      arr.splice(arr.length - b);
+      a.splice(a.length - b);
     }
-    return arr;
+    return a;
   } else {
     console.log(a + " is not an array");
   }
