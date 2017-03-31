@@ -12,24 +12,21 @@ function isArrayThree(a) {
 
 function range(a, b, c) {
   var arr = [];
-  if (b === undefined || b === null) {
-    if (c !== undefined) {
-      for (var i = 0; i < a; i += c) {
-        arr.push(i);
-      }
-    } else {
-      for (var i = 0; i < a; i++) {
-        arr.push(i);
-      }
-    }
-  } else if (c === undefined) {
-    for (var i = a; i < b; i++) {
-      arr.push(i);
-    }
-  } else if (c !== 0) {
-    for (var i = a; i < b; i += c) {
-      arr.push(i);
-    }
+  var i = 0;
+  var j, k;
+  if (b == undefined) {
+    j = a;
+  } else {
+    i = a;
+    j = b;
+  }
+  if (c == undefined || c <= 0) {
+    k = 1;
+  } else {
+    k = c;
+  }
+  for (i; i < j; i += k) {
+    arr.push(i);
   }
   return arr;
 }
@@ -50,10 +47,9 @@ function compactLoop(a) {
 
 function compact(a) {
   if (Array.isArray(a)) {
-    var arr = a.filter(function(el) {
+    return a.filter(function(el) {
       return el ? true : false; 
     });
-    return arr;
   } else {
     console.log(a + " is not an array");
   }
