@@ -14,20 +14,37 @@ function range(a, b, c) {
   var arr = [];
   var i = 0;
   var j, k;
+  var diff = b - a;
   if (b == undefined) {
     j = a;
   } else {
     i = a;
     j = b;
   }
-  if (c == undefined || c <= 0) {
-    k = 1;
-  } else {
-    k = c;
+  if (c == undefined || c == 0) {
+    if (diff < 0) {
+      return arr;
+    } else {
+      k = 1;
+    }
+  } else if (c > 0) {
+    if (diff < 0) {
+      return arr;
+    } else {
+      k = c;
+      for (i; i < j; i += k) {
+        arr.push(i);
+      }
+    }
+  } else if (c < 0) {
+    if (diff < 0) {
+      k = c;
+      for (i; i > j; i += k) {
+        arr.push(i);
+      }
+    }
   }
-  for (i; i < j; i += k) {
-    arr.push(i);
-  }
+
   return arr;
 }
 
@@ -102,11 +119,10 @@ function last(a) {
 function excludeLast(a, b) {
   if (Array.isArray(a)) {
     if (b === undefined) {
-      a.pop();
+      return a.slice(0, a.length - 1);
     } else if (typeof b == "number") {
-      a.splice(a.length - b);
+      return a.slice(0, a.length - b);
     }
-    return a;
   } else {
     console.log(a + " is not an array");
   }
@@ -149,6 +165,9 @@ console.log("range(1, 10, 2): " + range(1, 10, 2));
 console.log("range(1, 10, 0): " + range(1, 10, 0));
 console.log("range(-1, 10, 4): " + range(-1, 10, 4));
 console.log("range(1, -10, 4): " + range(1, -10, 4));
+console.log("range(-10, -15, -2): " + range(-10, -15, -2));
+console.log("range(-10, -5, -2): " + range(-10, -5, -2));
+console.log("range(-10, -2, 2): " + range(-10, -2, 2));
 
 console.log("function compactLoop()");
 console.log("compactLoop([1, 0, { }, [], null, undefined]): " + compactLoop([1, 0, { }, [], null, undefined]));
