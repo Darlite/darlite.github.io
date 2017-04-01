@@ -13,10 +13,16 @@ function isArrayThree(a) {
 function range(a, b, c) {
   var arr = [];
   var i = 0;
-  var j, k;
+  var j, k = 1;
   var diff = b - a;
+  var f = 1;
   if (b == undefined) {
     j = a;
+    if (a > 0) {
+      diff = 1;
+    } else {
+      diff = -1;
+    }
   } else {
     i = a;
     j = b;
@@ -32,16 +38,23 @@ function range(a, b, c) {
       return arr;
     } else {
       k = c;
-      for (i; i < j; i += k) {
-        arr.push(i);
-      }
+      f = 1;
     }
   } else if (c < 0) {
     if (diff < 0) {
       k = c;
-      for (i; i > j; i += k) {
-        arr.push(i);
-      }
+      f = -1;
+    } else {
+      return arr;
+    }
+  }
+  if (f == 1) {
+    for (i; i < j; i += k) {
+      arr.push(i);
+    }
+  } else {
+    for (i; i > j; i += k) {
+      arr.push(i);
     }
   }
 
@@ -118,11 +131,8 @@ function last(a) {
 
 function excludeLast(a, b) {
   if (Array.isArray(a)) {
-    if (b === undefined) {
-      return a.slice(0, a.length - 1);
-    } else if (typeof b == "number") {
-      return a.slice(0, a.length - b);
-    }
+    var n = b || 1;
+    return a.slice(0, a.length - n);
   } else {
     console.log(a + " is not an array");
   }
@@ -168,6 +178,17 @@ console.log("range(1, -10, 4): " + range(1, -10, 4));
 console.log("range(-10, -15, -2): " + range(-10, -15, -2));
 console.log("range(-10, -5, -2): " + range(-10, -5, -2));
 console.log("range(-10, -2, 2): " + range(-10, -2, 2));
+
+console.log("range(10, null, 3): " + range(10, null, 3));
+console.log("range(10, null): " + range(10, null));
+console.log("range(-2, -5): " + range(-2, -5));
+console.log("range(-5, -2): " + range(-5, -2));
+console.log("range(-5, -2, 2): " + range(-5, -2, 2));
+console.log("range(-5, -2, -2): " + range(-5, -2, -2));
+console.log("range(-5, null, 2): " + range(-5, null, 2));
+console.log("range(-5, null, -2): " + range(-5, null, -2));
+console.log("range(-10, -20, -5): " + range(-10, -20, -5));
+console.log("range(-20, -10, -5): " + range(-20, -10, -5));
 
 console.log("function compactLoop()");
 console.log("compactLoop([1, 0, { }, [], null, undefined]): " + compactLoop([1, 0, { }, [], null, undefined]));
