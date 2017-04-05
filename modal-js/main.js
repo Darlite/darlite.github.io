@@ -1,14 +1,14 @@
 var modal = document.getElementById("single-modal");
 
-var button = document.getElementById("modal-btn");
+var openButton = document.getElementById("open-modal-button");
 
-var span = document.getElementsByClassName("close")[0];
+var closeModal = document.getElementsByClassName("close-modal")[0];
 
-button.onclick = function() {
+openButton.onclick = function() {
   modal.style.display = "block";
 }
 
-span.onclick = function() {
+closeModal.onclick = function() {
   modal.style.display = "none";
 }
 
