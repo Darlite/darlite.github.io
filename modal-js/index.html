@@ -5,12 +5,12 @@
   <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-  <button id="open-modal-button">Open Modal</button>
+  <button id="open-modal-button" onclick="displayModal('single-modal')">Open Modal</button>
   
   <div id="single-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="close-modal">&times;</span>
+        <span class="close-modal" onclick="closeModal('single-modal')">&times;</span>
         <h2>Modal Header</h2>
       </div>
       <div class="modal-body">
@@ -21,7 +21,6 @@
         <h3>Modal footer</h3>
       </div>
     </div>
-    
   </div>
   
   <script type="text/javascript" src="main.js"></script>
