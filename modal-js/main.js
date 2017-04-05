@@ -1,13 +1,12 @@
 function displayModal(id) {
-  var modal = getElement(id)
-  modal.style.display = "block";
+  changeModalDisplay(id, "block");
 }
 
 function closeModal(id) {
-  var modal = getElement(id);
-  modal.style.display = "none";
+  changeModalDisplay(id, "none");
 }
 
-function getElement(id) {
-  return document.getElementById(id);
+function changeModalDisplay(id, style) {
+  var modal = document.getElementById(id);
+  modal.style.display = style;
 }
