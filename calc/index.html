@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <meta charset="UTF-8" />
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="calculator">
+      <div class="display">
+        <input type="text" readonly id="input-display">
+      </div>
+      <div class="calc-buttons">
+        <div class="button-row">
+          <button type="button" id="key-seven" onclick="writeNumber(7)">7</button>
+          <button type="button" id="key-eight" onclick="writeNumber(8)">8</button>
+          <button type="button" id="key-nine" onclick="writeNumber(9)">9</button>
+          <button type="button" id="key-division" onclick="writeSign('/')">/</button>
+          <button type="button" id="key-clear" onclick="clearDisplay()"><span id="clear-sign">CL</span></button>
+          <button type="button" id="key-clear-last" onclick="clearLast()">&larr;</button>
+        </div>
+
+        <div class="button-row">
+          <button type="button" id="key-four" onclick="writeNumber(4)">4</button>
+          <button type="button" id="key-five" onclick="writeNumber(5)">5</button>
+          <button type="button" id="key-siz" onclick="writeNumber(6)">6</button>
+          <button type="button" id="key-multiply" onclick="writeSign('*')">*</button>
+          <button type="button" id="key-functions" onclick="expandFunctions()">Func</button>
+          
+        </div>
+
+        <div class="button-row">
+          <button type="button" id="key-one" onclick="writeNumber(1)">1</button>
+          <button type="button" id="key-two" onclick="writeNumber(2)">2</button>
+          <button type="button" id="key-three" onclick="writeNumber(3)">3</button>
+          <button type="button" id="key-minus" onclick="writeSign('-')">-</button>
+          <button type="button" id="key-pow" onclick="writeSign('^')">x<sup>y</sup></button>
+          <button type="button" id="key-square" onclick="writeFunction('sqrt')">&radic;x</button>
+        </div>
+
+        <div class="button-row">
+          <button type="button" id="key-zero" onclick="writeNumber(0)">0</button>
+          <button type="button" id="key-point" onclick="writeSign('.')">.</button>
+          <button type="button" id="key-exponent" onclick="writeSign('e')"><span id="exponent-sign">Exp</span></button>
+          <button type="button" id="key-plus" onclick="writeSign('+')">+</button>
+          <button type="button" id="key-equals" onclick="calculate()"><span id="equals-sign">=</span></button>
+        </div>
+        
+        <div class="hidden-functions">
+          <div class="button-row">
+            <button type="button" id="key-sin" onclick="writeFunction('sin')">sin</button>
+            <button type="button" id="key-cos" onclick="writeFunction('cos')">cos</button>
+            <button type="button" id="key-tan" onclick="writeFunction('tan')">tan</button>
+            <button type="button" id="key-asin" onclick="writeFunction('asin')">asin</button>
+            <button type="button" id="key-acos" onclick="writeFunction('acos')">acos</button>
+            <button type="button" id="key-atan" onclick="writeFunction('atan')">atan</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+  
