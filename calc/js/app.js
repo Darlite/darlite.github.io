@@ -18,7 +18,9 @@ function writeSign(sign, id) {
   var displayText = document.getElementById(id).value;
   var lastSymbol = displayText[displayText.length-1];
   var calcSigns = ['/', '*', '-', '+', '.', 'e', '^'];
-  if (lastSymbol != sign && lastSymbol !== undefined && !calcSigns.includes(lastSymbol)) {
+  if (lastSymbol != sign && sign == '-') {
+    document.getElementById(id).value = displayText + sign;
+  } else if (lastSymbol != sign && lastSymbol !== undefined && !calcSigns.includes(lastSymbol)) {
     document.getElementById(id).value = displayText + sign;
   }
 }
@@ -62,7 +64,6 @@ function calculate(id) {
   
   while (displayTextPow.indexOf('^') != -1) {
     matchPow = regExpPow.exec(displayTextPow);
-    console.log(matchPow);
     displayTextPow = displayTextPow.replace(matchPow[0], "Math.pow(" + matchPow[1] + "," + matchPow[2] + ")");
   }
   
