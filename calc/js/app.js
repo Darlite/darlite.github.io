@@ -1,43 +1,43 @@
-function writeNumber(number) {
-  var displayText = document.getElementById("input-display").value;
+function writeNumber(number, id) {
+  var displayText = document.getElementById(id).value;
   if (displayText != '0') {
-    document.getElementById("input-display").value = displayText + number;
+    document.getElementById(id).value = displayText + number;
   }
 }
 
-function clearDisplay() {
-  document.getElementById("input-display").value = '';
+function clearDisplay(id) {
+  document.getElementById(id).value = '';
 }
 
-function clearLast() {
-  var displayText = document.getElementById("input-display").value;
-  document.getElementById("input-display").value = displayText.replace(displayText[displayText.length-1], '');
+function clearLast(id) {
+  var displayText = document.getElementById(id).value;
+  document.getElementById(id).value = displayText.replace(displayText[displayText.length-1], '');
 }
 
-function writeSign(sign) {
-  var displayText = document.getElementById("input-display").value;
+function writeSign(sign, id) {
+  var displayText = document.getElementById(id).value;
   var lastSymbol = displayText[displayText.length-1];
   var calcSigns = ['/', '*', '-', '+', '.', 'e', '^'];
   if (lastSymbol != sign && lastSymbol !== undefined && !calcSigns.includes(lastSymbol)) {
-    document.getElementById("input-display").value = displayText + sign;
+    document.getElementById(id).value = displayText + sign;
   }
 }
 
-function writeFunction(func) {
-  var displayText = document.getElementById("input-display").value;
+function writeFunction(func, id) {
+  var displayText = document.getElementById(id).value;
   if (displayText != '') {
     var functionText = func + "(" + displayText + ")";
-    document.getElementById("input-display").value = functionText;
+    document.getElementById(id).value = functionText;
   }
 }
 
-function expandFunctions() {
-  var displayValue = document.getElementsByClassName("hidden-functions")[0].style.display;
-  document.getElementsByClassName("hidden-functions")[0].style.display = displayValue == "block" ? "none" : "block";
+function expandFunctions(id) {
+  var displayValue = document.getElementsByClassName(id)[0].style.display;
+  document.getElementsByClassName(id)[0].style.display = displayValue == "block" ? "none" : "block";
 }
 
-function calculate() {
-  var displayText = document.getElementById("input-display").value;
+function calculate(id) {
+  var displayText = document.getElementById(id).value;
   var functions = ['sqrt', 'sin', 'cos', 'tan', 'asin', 'acos', 'atan'];
   var regExpFunc = /(?:^sqrt|\(sqrt)|(?:^sin|\(sin)|(?:^cos|\(cos)|(?:^tan|\(tan)|(?:^asin|\(asin)|(?:^acos|\(acos)|(?:^atan|\(atan)/g;
   var displayTextFunc = displayText;
@@ -67,6 +67,6 @@ function calculate() {
   }
   
   if (displayTextPow != undefined && displayTextPow != '') {
-    document.getElementById("input-display").value = eval(displayTextPow);
+    document.getElementById(id).value = eval(displayTextPow);
   }
 }
