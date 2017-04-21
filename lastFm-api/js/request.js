@@ -17,7 +17,7 @@ function Request() {
   };
 }
 
-Request.prototype.sendRequest = function () {
-  this.xhr.open("GET", this.resource, true);
+Request.prototype.sendRequest = function (method) {
+  this.xhr.open(method, this.resource, true);
   this.xhr.send(null);
 };
