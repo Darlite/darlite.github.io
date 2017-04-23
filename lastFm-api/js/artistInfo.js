@@ -11,5 +11,5 @@ ArtistInfo.prototype.getInfo = function(artistName) {
     method: this.method,
     artist: artistName
   };
-  this.sendRequest("GET", queryObject);
+  this.makeGet(queryObject);
 };

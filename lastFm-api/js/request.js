@@ -21,11 +21,11 @@ function Request() {
   };
 }
 
-Request.prototype.sendRequest = function (requestMethod, queryParams) {
+Request.prototype.makeGet = function (queryParams) {
   queryParams.api_key = this.apiKey;
   queryParams.format = this.format;
   var queryString = this.buildQueryString(queryParams);
-  this.xhr.open(requestMethod, queryString, true);
+  this.xhr.open('GET', queryString, true);
   this.xhr.send(null);
 };
 
@@ -34,8 +34,8 @@ Request.prototype.buildQueryString = function (queryParams) {
 };
 
 function encodeQueryData(data) {
-   let ret = [];
-   for (let d in data)
+   var ret = [];
+   for (var d in data)
      ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
    return ret.join('&');
 }

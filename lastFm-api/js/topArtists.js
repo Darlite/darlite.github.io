@@ -10,5 +10,5 @@ TopArtists.prototype.getInfo = function(artistName) {
   var queryObject = {
     method: this.method
   };
-  this.sendRequest("GET", queryObject);
+  this.makeGet(queryObject);
 };

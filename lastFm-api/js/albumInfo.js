@@ -12,5 +12,5 @@ AlbumInfo.prototype.getInfo = function(artistName, albumName) {
     artist: artistName,
     album: albumName
   };
-  this.sendRequest("GET", queryObject);
+  this.makeGet(queryObject);
 };
