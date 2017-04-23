@@ -24,13 +24,13 @@ function Request() {
 Request.prototype.makeGet = function (queryParams) {
   queryParams.api_key = this.apiKey;
   queryParams.format = this.format;
-  var queryString = this.buildQueryString(queryParams);
+  var queryString = this.url + buildQueryString(queryParams);
   this.xhr.open('GET', queryString, true);
   this.xhr.send(null);
 };
 
-Request.prototype.buildQueryString = function (queryParams) {
-  return this.url + encodeQueryData(queryParams);
+function buildQueryString (queryParams) {
+  return encodeQueryData(queryParams);
 };
 
 function encodeQueryData(data) {
