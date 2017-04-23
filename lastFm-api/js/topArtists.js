@@ -5,3 +5,10 @@ function TopArtists() {
 
 TopArtists.prototype = Object.create(Request.prototype);
 TopArtists.prototype.constructor = TopArtists;
+
+TopArtists.prototype.getInfo = function(artistName) {
+  var queryObject = {
+    method: this.method
+  };
+  this.sendRequest("GET", queryObject);
+};
