@@ -1,5 +1,5 @@
-function ArtistSearch(artistName) {
-  this.resource = "http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=" + artistName + "&api_key=6c42a6265b88915f11e9bd1aad2d389d&format=json";
+function ArtistSearch() {
+  this.method = "artist.search";
   Request.apply(this, arguments);
 }
 

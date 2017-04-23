@@ -1,11 +1,11 @@
-var artistInfo = new ArtistInfo("Caspian");
-artistInfo.sendRequest("GET");
+var artistInfo = new ArtistInfo();
+artistInfo.getInfo("Caspian");
 
-var artistSearch = new ArtistSearch("toe");
-artistSearch.sendRequest("GET");
+var artistSearch = new ArtistSearch();
+artistSearch.getInfo("toe");
 
-var albumInfo = new AlbumInfo("Explosions in the sky", "The Earth Is Not a Cold Dead Place");
-albumInfo.sendRequest("GET");
+var albumInfo = new AlbumInfo();
+albumInfo.getInfo("Explosions in the sky", "The Earth Is Not a Cold Dead Place");
 
 var topArtists = new TopArtists();
-topArtists.sendRequest("GET");
+topArtists.getInfo();
