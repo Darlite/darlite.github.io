@@ -33,7 +33,7 @@ Request.prototype.buildQueryString = function (queryParams) {
   return encodeQueryData(queryParams);
 };
 
-function encodeQueryData(data) {
+Request.prototype.encodeQueryData = function (data) {
    var ret = [];
    for (var d in data)
      ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
