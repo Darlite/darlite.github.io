@@ -29,7 +29,7 @@ Request.prototype.makeGet = function (queryParams) {
   this.xhr.send(null);
 };
 
-function buildQueryString (queryParams) {
+Request.prototype.buildQueryString = function (queryParams) {
   return encodeQueryData(queryParams);
 };
 
