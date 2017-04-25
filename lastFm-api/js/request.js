@@ -1,5 +1,3 @@
-// API Key 6c42a6265b88915f11e9bd1aad2d389d
-
 function Request() {
   this.xhr = new XMLHttpRequest();
   
@@ -24,13 +22,13 @@ function Request() {
 Request.prototype.makeGet = function (queryParams) {
   queryParams.api_key = this.apiKey;
   queryParams.format = this.format;
-  var queryString = this.url + buildQueryString(queryParams);
+  var queryString = this.url + this.buildQueryString(queryParams);
   this.xhr.open('GET', queryString, true);
   this.xhr.send(null);
 };
 
 Request.prototype.buildQueryString = function (queryParams) {
-  return encodeQueryData(queryParams);
+  return this.encodeQueryData(queryParams);
 };
 
 Request.prototype.encodeQueryData = function (data) {
