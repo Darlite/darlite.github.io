@@ -50,7 +50,8 @@ Request.prototype.buildQueryString = function(queryParams) {
 
 Request.prototype.encodeQueryData = function(data) {
    var ret = [];
-   for (var d in data)
+   for (var d in data) {
      ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+   }
    return ret.join('&');
 };

@@ -1,5 +1,7 @@
 window.onload = showTopArtists();
 
+document.getElementById("title").onclick = showTopArtists;
+
 function showTopArtists(pageNumber) {
   var topArtists = new TopArtists();
   topArtists.getInfo(pageNumber);

@@ -60,6 +60,12 @@ body {
   min-height: 370px;
 }
 
+.artistInfo img {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
 #artist-title {
   display: inline-block;
   min-width: 950px;
@@ -117,6 +123,16 @@ body {
 
 .albumInfo {
   min-height: 370px;
+}
+
+.albumInfo img {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.albumInfo #artistName {
+  font-weight: bold;
 }
 
 #loader {
