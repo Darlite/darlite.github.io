@@ -4,15 +4,13 @@ function drawAlbumInfo(response) {
   var albumInfo = JSON.parse(response).album;
 
   var divContent = document.getElementsByClassName('content')[0];
-
-  while (divContent.firstChild) {
-    divContent.removeChild(divContent.firstChild);
-  }
+  divContent.innerHTML = '';
 
   var divAlbumInfo = document.createElement('div');
   divAlbumInfo.setAttribute('class', 'albumInfo');
 
   var img = document.createElement('img');
+  // 3 - for extralarge size image
   img.setAttribute('src', albumInfo.image[3]['#text']);
   var pArtist = document.createElement('p');
   pArtist.setAttribute('id', 'artistName');
@@ -44,7 +42,7 @@ function drawAlbumInfo(response) {
   divRatingBar.setAttribute('id', 'rating-bar');
 
   var fragmentRatingBar = document.createDocumentFragment();
-  var randomInput = getRandomInt(1,6);
+  var randomInput = getRandomInt(1,6); // to color rating hearts from 1 to 5
   for (var i = 1; i < 6; i++) {
     var input = document.createElement('input');
     var label = document.createElement('label');
@@ -70,7 +68,7 @@ function drawAlbumInfo(response) {
   divTracks.setAttribute('class', 'tracks');
 
   var h2 = document.createElement('h2');
-  h2.textContent = "Tracks";
+  h2.textContent = 'Tracks';
 
   var ul = document.createElement('ul');
   ul.setAttribute('id', 'tracks');

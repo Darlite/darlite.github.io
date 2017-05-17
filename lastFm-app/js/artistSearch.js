@@ -1,5 +1,5 @@
 function ArtistSearch() {
-  this.method = "artist.search";
+  this.method = 'artist.search';
   Request.apply(this, arguments);
 }
 

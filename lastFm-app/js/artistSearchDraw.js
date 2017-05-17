@@ -2,11 +2,7 @@
 
 function drawArtistSearch(response) {
   var divContent = document.getElementsByClassName('content')[0];
-  if (divContent.firstChild !== null) {
-    while (divContent.firstChild) {
-      divContent.removeChild(divContent.firstChild);
-    }
-  }
+  divContent.innerHTML = '';
 
   var fragment = document.createDocumentFragment();
   var ul = document.createElement('ul');
@@ -20,12 +16,13 @@ function drawArtistSearch(response) {
     divArtistName.setAttribute('class', 'artistName');
 
     var span = document.createElement('span');
+    // 2 - for large size image
     img.setAttribute('src', artist.image[2]['#text']);
     img.setAttribute('data-artist-name', artist.name);
-    img.addEventListener("click", () => showArtistInfo(img.dataset.artistName));
+    img.addEventListener('click', () => showArtistInfo(img.dataset.artistName));
     span.textContent = artist.name;
     span.setAttribute('data-artist-name', artist.name);
-    span.addEventListener("click", () => showArtistInfo(span.dataset.artistName));
+    span.addEventListener('click', () => showArtistInfo(span.dataset.artistName));
     li.appendChild(img);
     divArtistName.appendChild(span);
     li.appendChild(divArtistName);

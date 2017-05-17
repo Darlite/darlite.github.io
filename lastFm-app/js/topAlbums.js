@@ -1,5 +1,5 @@
 function TopAlbums() {
-  this.method = "artist.getTopAlbums";
+  this.method = 'artist.getTopAlbums';
   Request.apply(this, arguments);
 }
 

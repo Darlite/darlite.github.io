@@ -1,17 +1,13 @@
 /* jshint esversion: 6 */
 
 function drawArtistInfo(response) {
-  var divSearch = document.getElementsByClassName("search")[0];
+  var divSearch = document.getElementsByClassName('search')[0];
   while (divSearch.firstChild) {
     divSearch.removeChild(divSearch.firstChild);
   }
 
   var divContent = document.getElementsByClassName('content')[0];
-  if (divContent.firstChild !== null) {
-    while (divContent.firstChild) {
-      divContent.removeChild(divContent.firstChild);
-    }
-  }
+  divContent.innerHTML = '';
 
   var artistInfo = JSON.parse(response).artist;
 
@@ -31,7 +27,7 @@ function drawArtistInfo(response) {
   divRatingBar.setAttribute('id', 'rating-bar');
 
   var fragmentRatingBar = document.createDocumentFragment();
-  var randomInput = getRandomInt(1,6);
+  var randomInput = getRandomInt(1,6); // to color rating hearts from 1 to 5
   for (var i = 1; i < 6; i++) {
     var input = document.createElement('input');
     var label = document.createElement('label');
@@ -54,6 +50,7 @@ function drawArtistInfo(response) {
   divContent.appendChild(divRatingBar);
 
   var img = document.createElement('img');
+  // 3 - for extralarge size image
   img.setAttribute('src', artistInfo.image[3]['#text']);
   var p = document.createElement('p');
   p.textContent = artistInfo.bio.summary;

@@ -19,12 +19,7 @@ function drawTopArtists(response) {
   }
 
   var divContent = document.getElementsByClassName('content')[0];
-
-  if (divContent.firstChild !== null) {
-    while (divContent.firstChild) {
-      divContent.removeChild(divContent.firstChild);
-    }
-  }
+  divContent.innerHTML = '';
 
   var ul = document.createElement('ul');
   ul.setAttribute('id', 'artists');
@@ -37,6 +32,7 @@ function drawTopArtists(response) {
     divArtistName.setAttribute('class', 'artistName');
 
     var span = document.createElement('span');
+    // 2 - for large size image
     img.setAttribute('src', artist.image[2]['#text']);
     img.setAttribute('data-artist-name', artist.name);
     img.addEventListener("click", () => showArtistInfo(img.dataset.artistName));
@@ -56,7 +52,8 @@ function drawTopArtists(response) {
   var linksFragment = document.createDocumentFragment();
   divPagination.setAttribute('id', 'pagination');
 
-  for (var i = 1; i < 11; i++) {
+  var numberOfPages = 11;
+  for (var i = 1; i < numberOfPages; i++) {
     let a = document.createElement('a');
     a.textContent = i;
     a.setAttribute('data-page-number', i);

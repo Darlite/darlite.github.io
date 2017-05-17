@@ -1,5 +1,5 @@
 function ArtistInfo() {
-  this.method = "artist.getinfo";
+  this.method = 'artist.getinfo';
   Request.apply(this, arguments);
 }
 

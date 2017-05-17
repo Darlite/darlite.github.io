@@ -9,7 +9,7 @@ function drawTopAlbums(response) {
   divAlbums.setAttribute('class', 'albums');
 
   var h2 = document.createElement('h2');
-  h2.textContent = "Albums";
+  h2.textContent = 'Albums';
 
   var ul = document.createElement('ul');
   ul.setAttribute('id', 'albums');
@@ -23,14 +23,15 @@ function drawTopAlbums(response) {
     divAlbumName.setAttribute('class', 'albumName');
 
     var span = document.createElement('span');
+    // 2 - for large size image
     img.setAttribute('src', album.image[2]['#text']);
     img.setAttribute('data-artist-name', album.artist.name);
     img.setAttribute('data-album-name', album.name);
-    img.addEventListener("click", () => showAlbumInfo(img.dataset.artistName, img.dataset.albumName));
+    img.addEventListener('click', () => showAlbumInfo(img.dataset.artistName, img.dataset.albumName));
     span.textContent = album.name;
     span.setAttribute('data-artist-name', album.artist.name);
     span.setAttribute('data-album-name', album.name);
-    span.addEventListener("click", () => showAlbumInfo(span.dataset.artistName, span.dataset.albumName));
+    span.addEventListener('click', () => showAlbumInfo(span.dataset.artistName, span.dataset.albumName));
     li.appendChild(img);
     divAlbumName.appendChild(span);
     li.appendChild(divAlbumName);

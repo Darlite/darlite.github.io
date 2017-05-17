@@ -1,5 +1,5 @@
 function AlbumInfo() {
-  this.method = "album.getinfo";
+  this.method = 'album.getinfo';
   Request.apply(this, arguments);
 }
 
