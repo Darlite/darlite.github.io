@@ -2,9 +2,7 @@
 
 function drawArtistInfo(response) {
   var divSearch = document.getElementsByClassName('search')[0];
-  while (divSearch.firstChild) {
-    divSearch.removeChild(divSearch.firstChild);
-  }
+  divSearch.innerHTML = '';
 
   var divContent = document.getElementsByClassName('content')[0];
   divContent.innerHTML = '';
