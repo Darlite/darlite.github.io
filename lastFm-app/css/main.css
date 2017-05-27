@@ -1,0 +1,221 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.container {
+  min-width: 1200px;
+}
+
+.header {
+  background-color: #3F51B5;
+}
+
+.header h1 {
+  margin-top: 0;
+  color: white;
+  line-height: 60px;
+  margin-left: 60px;
+  cursor: pointer;
+}
+
+.search {
+  margin-left: 40%;
+}
+
+.content {
+  padding-left: 60px;
+  padding-right: 80px;
+  margin-bottom: 60px;
+  display: none;
+}
+
+#artists li {
+  overflow: hidden;
+  list-style-type: none;
+  display: inline-block;
+  border: 1px solid lightgrey;
+  margin-right: 40px;
+  margin-bottom: 25px;
+  width: 174px;
+  min-height: 220px;
+  border-radius: 2px;
+}
+
+#artists img {
+  cursor: pointer;
+}
+
+#artists span {
+  cursor: pointer;
+  line-height: 26px;
+}
+
+.artistInfo {
+  min-height: 370px;
+}
+
+.artistInfo img {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+#artist-title {
+  display: inline-block;
+  min-width: 950px;
+}
+
+.artistName {
+  margin-top: -4px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+#album-title {
+  display: inline-block;
+  min-width: 950px;
+}
+
+#rating-bar {
+  display: inline-block;
+}
+
+#albums {
+  padding-left: 0;
+  min-height: 360px;
+}
+
+#albums li {
+  overflow: hidden;
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  width: 200px;
+  min-height: 220px;
+  border-radius: 3px;
+  margin-left: 0;
+}
+
+#albums img {
+  cursor: pointer;
+  padding-left: 14px;
+}
+
+#albums span {
+  cursor: pointer;
+}
+
+.albumName {
+  padding: 10px 0px 10px 12px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.albumInfo {
+  min-height: 370px;
+}
+
+.albumInfo img {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.albumInfo #artistName {
+  font-weight: bold;
+}
+
+#loader {
+  border: 16px solid #fff;
+  border-top: 16px solid #448AFF;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1.5s linear infinite;
+  position: absolute;
+  left: 44%;
+  top: 35%;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#rating-bar input {
+  border: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  opacity: 0;
+}
+
+#rating-bar label {
+  position: relative;
+  float: right;
+  color: #C8C8C8;
+}
+
+#rating-bar label:before {
+  margin: 5px;
+  content: "\f004";
+  font-family: FontAwesome;
+  display: inline-block;
+  font-size: 1.5em;
+  color: #ccc;
+}
+
+#rating-bar input:checked ~ label:before {
+  color: #303F9F;
+}
+
+#pagination {
+  display: inline-block;
+  margin-left: 360px;
+}
+
+#pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid grey;
+}
+
+#pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+#pagination a:active {
+  background-color: #3949AB;
+  color: white;
+}
+
+#footer {
+  background-color: #3949AB;
+  padding: 20px 0px 20px 0px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+#footer span {
+  font-weight: bold;
+  color: white;
+}

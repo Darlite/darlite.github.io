@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Last.fm API</title>
+  <link href="css/main.css" type="text/css" rel="stylesheet">
+  <link href="fonts/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="header">
+        <h1 id="title">Last.fm API</h1>
+      </div>
+      <div class="search">
+        <input type="text" id="search-field" placeholder="Search for music..." />
+        <button type="submit" onclick="search('search-field')">Search</button>
+      </div>
+      <div class="content">
+
+      </div>
+      <div id="footer">
+        <span>Developed by Ihar Chumakou</span>
+      </div>
+    </div>
+  </div>
+  <div id="loader"></div>
+  
+  <script type="text/javascript" src="js/request.js"></script>
+  <script type="text/javascript" src="js/albumInfo.js"></script>
+  <script type="text/javascript" src="js/artistInfo.js"></script>
+  <script type="text/javascript" src="js/artistSearch.js"></script>
+  <script type="text/javascript" src="js/topArtists.js"></script>
+  <script type="text/javascript" src="js/topAlbums.js"></script>
+  <script type="text/javascript" src="js/topArtistsDraw.js"></script>
+  <script type="text/javascript" src="js/artistSearchDraw.js"></script>
+  <script type="text/javascript" src="js/artistInfoDraw.js"></script>
+  <script type="text/javascript" src="js/albumInfoDraw.js"></script>
+  <script type="text/javascript" src="js/topAlbumsDraw.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
