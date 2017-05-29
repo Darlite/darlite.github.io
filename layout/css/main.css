@@ -17,14 +17,14 @@ body {
   max-width: 1600px;
 }
 
-.buttons {
-  overflow: initial;
-}
-
 .row::after {
     content: "";
     clear: both;
     display: table;
+}
+
+.buttons {
+  overflow: initial;
 }
 
 [class*="col-"] {
@@ -391,21 +391,15 @@ body {
   margin-top: 20px;
 }
 
-#input-email::-webkit-input-placeholder {
-  color: #3c3c3c;
-  font: 14px Trebuchet MS, sans-serif;
-}
-
-#input-email::-moz-placeholder {
+#input-email:placeholder-shown {
   color: #3c3c3c;
   font: 14px Trebuchet MS, sans-serif;
 }
 
 #input-email {
-  text-indent: 5px;
+  text-indent: 10px;
   height: 30px;
   width: 204px;
-  padding: 10px 5px;
   border: 0;
   float: left;
 }
