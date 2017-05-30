@@ -11,8 +11,7 @@ body {
 
 .row {
   overflow: hidden;
-/*  width: 75%;*/
-  width: 942px;
+  width: 75%;
   margin: 0 auto;
   max-width: 1600px;
 }
@@ -21,10 +20,6 @@ body {
     content: "";
     clear: both;
     display: table;
-}
-
-.buttons {
-  overflow: initial;
 }
 
 [class*="col-"] {
@@ -62,7 +57,7 @@ body {
   margin-bottom: 24px;
 }
 
-#trustpilot-logo {
+.trustpilot-logo {
   display: inline-block;
 }
 
@@ -74,11 +69,13 @@ body {
 }
 
 #trustpilot-singUp {
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 #header {
-  min-height: 160px;
+  max-height: 105px;
+  overflow: hidden;
+  margin-bottom: 40px;
 }
 
 #information {
@@ -112,11 +109,11 @@ body {
   float: right;
   background-color: #333333;
   color: #fefefe;
-  padding: 10px 0 10px 15px;
+  padding: 10px 0 10px 10px;
   width: 214px;
 }
 
-#cart #cart-text {
+#cart .cart-text {
   font-size: 18px;
 }
 
@@ -194,9 +191,14 @@ body {
 #jumbotron {
   position: relative;
   margin-bottom: 40px;
+/*  width: 100%;*/
 }
 
-#jumbotron-text {
+#jumbotron > img{
+  width: 100%;
+}
+
+#jumbotron .jumbotron-text {
   position: absolute;
   color: #ffffff;
   font: 100 36px Open Sans, sans-serif;
@@ -227,7 +229,7 @@ body {
 }
 
 .row-item {
-  float: left;
+  margin: 0 auto;
   height: 310px;
   width: 219px;
   border: 1px solid #bdbdbd;
@@ -257,7 +259,7 @@ body {
 }
 
 .row-item .item-title {
-  font-size: 16px;
+  font-size: 15px;
   display: inline-block;
   min-height: 45px;
   margin-top: 5px;
@@ -285,8 +287,12 @@ body {
   font-size: 18px;
 }
 
-.row-item .item-button + .item-button {
-  margin-left: 15px;
+.add-item {
+  float: left;
+}
+
+.view-item {
+  float: right;
 }
 
 #best-sellers {
@@ -302,13 +308,16 @@ body {
 }
 
 .column {
-  width: 300px;
-  display: inline-block;
+  margin: 0 auto;
 }
 
-.column + .column {
-  margin-left: 18px;
+.first {
+  float: left;
 }
+
+.last { 
+  float: right; 
+} 
 
 .column-header {
   position: relative;
@@ -377,7 +386,8 @@ body {
 
 .form-wrapper {
   width: 297px;
-  margin-top: 20px;
+  padding-top: 18px;
+  margin: 0 auto;
 }
 
 #input-email:placeholder-shown {
@@ -407,7 +417,7 @@ body {
 .social-icons {
   display: inline;
   line-height: 72px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .social-icons img {
@@ -423,7 +433,6 @@ body {
 }
 
 .footer-column {
-  width: 210px;
   text-align: justify;
   color: #3c3c3c;
 }
