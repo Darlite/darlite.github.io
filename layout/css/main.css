@@ -66,13 +66,7 @@ body {
   display: inline-block;
 }
 
-.trustpilot-button {
-  line-height: 48px;
-  font-size: 18px;
-  padding: 0;
-}
-
-#trustpilot-buttons {
+.trustpilot-buttons {
   display: inline;
   float: right;
   line-height: 48px;
@@ -80,12 +74,7 @@ body {
 }
 
 #trustpilot-singUp {
-  display: inline-block;
-}
-
-#trustpilot-singIn {
-  display: inline-block;
-  margin-left: 20px;
+  padding-right: 10px;
 }
 
 #header {
